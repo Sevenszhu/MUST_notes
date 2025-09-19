@@ -59,7 +59,7 @@ x - x_0 = v_0t + \dfrac{1}{2}at^2
 $$
 these equations can be used to solve any **constant acceleration** problems.
 $$
-v^2 = v_0^2 + 2a(x - x_0)
+v^2 = v_0^2 + 2a(x - x_0)
 $$
 
 ## 2.5 Free-Fall Acceleration 
@@ -186,4 +186,56 @@ $$
     $$
 
 where \( x\hat{\mathrm{i}} \), \( y\hat{\mathrm{j}} \), and \( z\hat{\mathrm{k}} \) are the vector components of \(\vec{r}\), and the coefficients \( x \), \(y\), and \(z\) are its scalar components.
+
+## 4.2 average velocity and instantaneous velocity
+
+### Average velocity and instantaneous velocity
+
+- If a particle moves through a displacement $\Delta \vec{r}$ in a time interval $\Delta t$, then its **average velocity** is: 
+
+$$
+\vec{v}_{avg} = \dfrac{\Delta\vec{r}}{\Delta t }
+$$
+
+this tells us the direction of $\vec{v}_{avg}$ must be the same as the displacement $\Delta\vec{r}$
+
+- **instantaneous velocity**: 
+    $$
+    \vec{v} = \dfrac{d\vec{r}}{dt}
+    $$
+
+- $$
+    \vec{v} = \frac{d}{dt} \left( x \hat{\mathrm{i}} + y \hat{\mathrm{j}} + z \hat{\mathrm{k}} \right) = \frac{dx}{dt} \hat{\mathrm{i}} + \frac{dy}{dt} \hat{\mathrm{j}} + \frac{dz}{dt} \hat{\mathrm{k}}.
+    $$
+
+    This equation can be simplified somewhat by writing it as
+    $$
+    \vec{v} = v_x \hat{\mathrm{i}} + v_y \hat{\mathrm{j}} + v_z \hat{\mathrm{k}} 
+    $$
+     where the scalar components of $\vec{v}$ are 
+    $$
+    v_x = \frac{dx}{dt}, \quad v_y = \frac{dy}{dt}, \quad \text{and} \quad v_z = \frac{dz}{dt}.
+    $$
+
+    ## 4.5 Uniform Circular motion
+
+    ### Uniform circular motion
+
+- a particle is in **uniform circular motion** if it travels around a circle or a circular arc at constant speed. The speed does not vary, however, the velocity change in direction.
+
+- The velocity is always directed tangent to the circle in the direction of motion.
+
+- The acceleration associated with uniform circular motion is called a **centripetal acceleration**. The magnitude of this acceleration is: 
+    $$
+    a = \dfrac{v^2}{r}
+    $$
+
+where $r$ is the radius of the circle, and $v$ the speed of the particle.
+
+- The particle travels the circumference of the circle (a distance of $2\pi$) in time: 
+    $$
+    T = \dfrac{2\pi r}{v}
+    $$
+
+$T$ is called the period of revolution.
 
