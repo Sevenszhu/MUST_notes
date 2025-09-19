@@ -1,0 +1,1755 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!-- saved from url=(0104)https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Truth -->
+<html style="--wm-toolbar-height: 68px;"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script src="./HDL-ABEL Primer_files/athena.js.&#19979;&#36733;" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app201.us.archive.org';v.server_ms=568;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="./HDL-ABEL Primer_files/bundle-playback.js.&#19979;&#36733;" charset="utf-8"></script>
+<script type="text/javascript" src="./HDL-ABEL Primer_files/wombat.js.&#19979;&#36733;" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="./HDL-ABEL Primer_files/ruffle.js.&#19979;&#36733;"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.seas.upenn.edu:80/~ese201/abel/abel_primer.html","20071012234417","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1192232657");
+</script>
+<link rel="stylesheet" type="text/css" href="./HDL-ABEL Primer_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="./HDL-ABEL Primer_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+   
+   <meta name="GENERATOR" content="Mozilla/4.5 [en]C-NECCK  (Win98; U) [Netscape]">
+   <meta name="Author" content="J. Van der Spiegel">
+   <meta name="Description" content="Overview of ABEL Hardware Description Language">
+   <meta name="KeyWords" content="ABEL, HDL, Digial Design">
+   <title>HDL-ABEL Primer</title>
+</head>
+<body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 68px;" toolbar-mode="auto"><template shadowrootmode="closed"><div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;height:0;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20071012234417/http%3A//www.seas.upenn.edu/~ese201/abel/abel_primer.html" scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0"></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="https://web.archive.org/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://www.seas.upenn.edu/~ese201/abel/abel_primer.html" onfocus="this.focus();this.select();" style="flex:1;" autocomplete="off"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20071012234417"><input type="submit" value="Go">
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;"><a class="t" href="https://web.archive.org/web/*/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html" title="See a list of every capture for this URL">53 captures</a><div class="r" title="Timespan for captures of this URL">27 Apr 2006 - 12 Oct 2024</div></div>
+        <div class="k">
+          <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="750" height="27" border="0"></canvas>
+            <div class="yt" style="display: none; width: 25px; height: 27px;"></div><div class="mt" style="display: none; width: 2px; height: 27px;"></div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20070807221031/http://www.seas.upenn.edu:80/~ese201/abel/abel_primer.html" title="07 Aug 2007"><strong>Aug</strong></a></td>
+            <td class="c" id="displayMonthEl" title="You are here: 23:44:17 Oct 12, 2007">OCT</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20071125112524/http://www.seas.upenn.edu:80/~ese201/abel/abel_primer.html" title="25 Nov 2007"><strong>Nov</strong></a></td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20070807221031/http://www.seas.upenn.edu:80/~ese201/abel/abel_primer.html" title="22:10:31 Aug 07, 2007"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0"></a></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 23:44:17 Oct 12, 2007">12</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20071125112524/http://www.seas.upenn.edu:80/~ese201/abel/abel_primer.html" title="11:25:24 Nov 25, 2007"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0"></a></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20060914120142/http://www.seas.upenn.edu/%7Eese201/abel/abel_primer.html" title="14 Sep 2006"><strong>2006</strong></a></td>
+            <td class="c" id="displayYearEl" title="You are here: 23:44:17 Oct 12, 2007">2007</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20081122162204/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html" title="22 Nov 2008"><strong>2008</strong></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#" title="Share via My Web Archive" style="display: none;">
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in" style="display: inline-block;">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web" style="display: none;"></span>
+        </span>
+                <a class="xxs" href="https://help.archive.org/help/category/the-wayback-machine/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="https://web.archive.org/web/20071012234417/http://web.archive.org/screenshot/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html" id="wm-screenshot" title="screenshot" style="visibility: hidden;">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#" data-url="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu:80/~ese201/abel/abel_primer.html" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#" data-url="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu:80/~ese201/abel/abel_primer.html" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/51_crawl)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/51_crawl" target="_new"><span class="wm-title">51_crawl</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  this data is currently not publicly accessible.
+	</div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading"></div>
+    </div>
+    </div>
+  </div></div></div><link rel="stylesheet" type="text/css" href="./HDL-ABEL Primer_files/banner-styles.css"><link rel="stylesheet" type="text/css" href="./HDL-ABEL Primer_files/iconochive.css"><div class="wb-autocomplete-suggestions " style="left: 135px; top: 22px; width: 870px;"></div></template>
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu:80/~ese201/abel/abel_primer.html</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","http://www.seas.upenn.edu/~ese201/abel/abel_primer.html","20071012234417",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=p7PEIJWi","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+
+<center>
+<h1>
+ABEL-HDL Primer</h1></center>
+
+<h2>
+<font size="+1">ABEL Primer</font>&nbsp;<a name="Contents"></a><font size="+1">Contents</font></h2>
+
+<ul>
+<li>
+1. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Introduction">Introduction</a></li>
+
+<li>
+2. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#structure">Basic structure of an ABEL source file</a></li>
+
+<li>
+3. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Declarations">Declarations</a> (module, pin, node, constants)</li>
+
+<li>
+4. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Numbers">Numbers</a></li>
+
+<li>
+5. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Directives">Directives</a></li>
+
+<li>
+6. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Sets">Sets</a></li>
+
+<ul>
+<li>
+a. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Indexing">Indexing or accessing a set</a></li>
+
+<li>
+b. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Set%20Operations">Set operations</a></li>
+</ul>
+
+<li>
+6. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Operators">Operators</a></li>
+
+<ul>
+<li>
+a. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Logical">Logical Operators</a></li>
+
+<li>
+b. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Arithmetic">Arithmetic operators</a></li>
+
+<li>
+c. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Relational">Relational operators</a></li>
+
+<li>
+d. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Assignment">Assignment operators</a></li>
+
+<li>
+e. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#priority">Operator priority</a></li>
+</ul>
+
+<li>
+8. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Logic">Logic description</a></li>
+
+<ul>
+<li>
+a. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Equations">Equations</a></li>
+
+<ul>
+<li>
+<a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#%22When-Then-Else%22">When-Then-Else statement</a></li>
+</ul>
+
+<li>
+b. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Truth">Truth Table</a></li>
+
+<li>
+c. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#State">State Description</a></li>
+
+<ul>
+<li>
+<a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#State">State_diagram</a></li>
+
+<li>
+<a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#If-Else-Then">If-Then-Else statement</a></li>
+
+<li>
+<a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#with">With statement</a></li>
+
+<li>
+<a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Case">Case statement</a></li>
+</ul>
+
+<li>
+d. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#extensions">Dot extensions</a></li>
+</ul>
+
+<li>
+9. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#vectors">Test vectors</a></li>
+
+<li>
+10. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Property">Device Specific (Property) Statements</a></li>
+
+<li>
+11. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Miscellaneous">Miscellaneous</a></li>
+
+<ul>
+<li>
+a. <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Active-low">Active-low declarations</a></li>
+</ul>
+
+<li>
+12. Examples</li>
+
+<ul>
+<li>
+<a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abelMoore.html">Moore Finite State Machine</a></li>
+
+<li>
+<a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abelMealy.html">Mealy Finite State Machine</a></li>
+
+<li>
+<a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abelMealySync.html">Synchronous Mealy Finite State Machine</a></li>
+</ul>
+
+<li>
+<a href="https://web.archive.org/web/20071012234417/http://www.ee.upenn.edu/rca/software/xilinx/foundation/commistakes.html">Common
+Mistakes</a></li>
+
+<li>
+<a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#References">References</a></li>
+
+<li>
+<a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Acknowledgement">Acknowledgement</a></li>
+</ul>
+
+<h2>
+1&nbsp;<a name="Introduction"></a>Introduction</h2>
+ABEL (Advanced Boolean Equation Language) allows you to enter behavior-like
+descriptions of a logic circuit. ABEL is an industry-standard hardware
+description language (HDL) that was developed by Data I/O Corporation for
+programmable logic devices (PLD). There are other hardware description
+languages such as VHDL and Verilog. ABEL is a simpler language than VHDL
+which is capable of describing systems of larger complexity.
+<p>ABEL can be used to describe the behavior of a system in a variety of
+forms, including logic equations, truth tables, and state diagrams using
+C-like statements. The ABEL compiler allows designs to be simulated and
+implemented into PLDs such as PALs, CPLDs and FPGAs.
+</p><p>Following is a brief overview of some of the features and syntax of
+ABEL. It is not intended to be a complete discussion of all its features.
+This ABEL primer will get you started with writing ABEL code. In case you
+are familiar with ABEL, this write-up can serve as a quick reference of
+the most often used commands. For more advanced features, please consult
+an ABEL manual or the Xilinx on-line documentation.
+</p><h2>
+2. Basic&nbsp;<a name="structure"></a>structure of an ABEL source file</h2>
+An ABEL source file consists of the following elements.
+<ul>
+<li>
+Header:<b> </b>including Module, Options and Title</li>
+
+<li>
+Declarations: Pin, Constant, Node, Sets, States. Library.</li>
+
+<li>
+Logic Descriptions: Equations, Truth-table, State_diagram</li>
+
+<li>
+Test Vectors: Test_vectors</li>
+
+<li>
+End</li>
+</ul>
+Keywords (words recognized by ABEL such as commands, e.g. goto, if, then,
+module, etc.) are not case sensitive. User-supplied names and labels (identifier)
+can be uppercase, lowercase or mixed-case, but <u>are case-sensitive</u>
+(input1 is different from Input1).
+<p>A typical&nbsp;<a name="template"></a>template is given below.
+</p><ul><b><font face="Courier">module</font></b> <i>module name</i>
+<p>[<b><font face="Courier">title</font></b> <i>string</i>]
+</p><p>[deviceID <b><font face="Courier">device</font></b> deviceType;]
+</p><p><i>pin declarations</i>
+</p><p><i>other declarations</i>
+</p><p><b><font face="Courier">equations</font></b>
+</p><p><i>equations</i>
+</p><p>[<b><font face="Courier">Test_Vectors</font></b>]
+</p><p><i>test vectors</i>
+</p><p><b><font face="Courier">end</font></b> <i>module name</i></p></ul>
+The following source file is an&nbsp;<a name="example"></a>example of a
+half adder:
+<ul><font face="Courier"><b>module</b> <i>my_first_circuit;</i></font>
+<br><font face="Courier"><b>title</b> <i>'ee200 assignment 1'</i></font>
+<br><font face="Courier">EE200XY <b>device</b> 'XC4003E';</font>
+<br>&nbsp;
+<br>&nbsp;
+<p><font face="Courier">" input pins</font>
+<br><font face="Courier">A, B pin 3, 5;</font>
+</p><p><font face="Courier">" output pins</font>
+<br><font face="Courier">SUM, Carry_out pin 15, 18 istype 'com';</font>
+</p><p><b><font face="Courier">equations</font></b>
+</p><p><font face="Courier">SUM = (A &amp; !B) # (!A &amp; B) ;</font>
+<br><font face="Courier">Carry_out = A &amp; B;</font>
+</p><p><font face="Courier"><b>end</b> <i>my_first_circuit;</i></font>
+<br>&nbsp;
+<br>&nbsp;</p></ul>
+A brief explanation of the statements follow. For a more detailed discussion
+see the following sections or consult an ABEL-HDL manual. When using ABEL
+with the Xilinx CAD software, you can use the ABEL wizard which will give
+a template of the basic structure and insert some of the keywords. Also
+the Language Assistant in the ABEL editor provides on-line help. Go to
+the TOOLS -&gt;LANGUAGE ASSISTANT menu. The Language templates give a description
+of most ABEL commands, syntax, hierarchy, etc, while the Synthesis template
+gives examples of typical circuits.
+<h2>
+3.&nbsp;<a name="Declarations"></a>Declarations</h2>
+<b><font face="Courier">Module</font></b>: each source files starts with
+a module statement followed by a module name (identifier). Large source
+files often consist of multiple modules with their own title, equations,
+end statement, etc.
+<p><b><font face="Courier">Title</font></b>: is <u>optional</u> and can
+be used to identify the project. The title name must be between single
+quotes. The title line is ignored by the compiler but is handy for documentation.
+</p><p><b><i>String</i></b>: is a series of ASCII characters enclosed by single
+quotes. Strings are used for TITLE, OPTIONS statements, and in pin, node
+and attribute declarations.
+</p><p><b><font face="Courier">device</font></b>: this declaration is <u>optional</u>
+and associates a device identifier with a specific programmable logic device.
+The device statement must end with a semicolon. When you are using the
+Xilinx CAD system to compile the design, it is better not to put the device
+statement in the source file to keep your design independent of the device.
+When you create a new project in Xilinx you will specify the device type
+(can also be changed in the Project Manager window using the Project Information
+button). The format is as follows:
+</p><ul>device_id <font face="Courier">device</font> 'real_device';
+<p>Example: MY_DECODER <font face="Courier">device </font>'XC4003E';
+<br>&nbsp;
+<br>&nbsp;</p></ul>
+<b><i>comments</i></b>: comments can be inserted anywhere in the file and
+begin with a double quote and end with another double quote or the end
+of the line, whatever comes first.
+<p><b><font face="Courier">pin</font></b>: pin declarations tell the compiler
+which symbolic names are associated with the devices external pins. Format:
+</p><ul><font face="Courier">[!]pin_id pin [pin#] [istype 'attributes'] ;</font></ul>
+One can specify more than one pin per line:
+<ul>[!]pin_id , pin_id, pin_id <font face="Courier">pin [</font>pin#, [pin#,
+[pin#]]] [<font face="Courier">istype</font> 'attributes'];
+<p>Example:
+</p><p><font face="Courier">IN1, IN2, A1 pin 2, 3, 4;</font>
+</p><p><font face="Courier">OUT1 pin 9 istype 'reg';</font>
+</p><p><font face="Courier">ENABLE pin;</font>
+</p><p><font face="Courier">!Chip_select pin 12 istype 'com';</font>
+</p><p><font face="Courier">!S0..!S6 pin istype 'com';</font>
+<br>&nbsp;
+<br>&nbsp;</p></ul>
+You do not need to specify the pin. Pin numbers can be specified later
+by using a "user constraint file " when doing the compilation using Xilinx
+CAD. This has the advantage that our design is more general and flexible.
+The ! indicates an active low (the signal will be inverted). The <font face="Courier">istype
+</font>is
+an optional attribute assignment for a pin such as 'com' to indicate that
+the output is a combinational signal or 'reg' for a clocked signal (registered
+with a flip flop). This attribute is only for output pins.
+<p><b><font face="Courier">node</font></b>: node declarations have the
+same format as the pin declaration. Nodes are internal signals which are
+not connected to external pins.
+</p><ul>Example:
+<p>tmp1 <font face="Courier">node [istype</font> 'com'];
+<br>&nbsp;
+<br>&nbsp;</p></ul>
+<b>other declarations</b> allows one to define constants, sets, macros
+and expressions which can simplify the program. As an example a constant
+declaration has the following format:
+<ul>id [, id],... = expr [, expr].. ;
+<p>Examples:
+</p><p><font face="Courier">A = 21;</font>
+</p><p><font face="Courier">C=2*7;</font>
+</p><p><font face="Courier">ADDR = [1,0,11];</font>
+</p><p><font face="Courier">LARGE = B &amp; C;</font>
+</p><p><font face="Courier">D = [D3, D2, D1, D0];</font>
+</p><p><font face="Courier">D = [D3..D0];</font></p></ul>
+The last two equations are equivalent. The use of ".." is handy to specify
+a range. The last example makes use of vector notations. Any time you use
+D in an equation, it will refer to the vector [D3, D2, D1. D0].
+<h2>
+4.&nbsp;<a name="Numbers"></a>Numbers</h2>
+Numbers can be entered in four different bases: binary, octal, decimal
+and hexadecimal. The default base is decimal. Use one of the following
+symbols (upper or lower case allowed) to specify the base. When no symbol
+is specified it is assumed to be in the <u>decimal</u> base. You can change
+the default base with the Directive "Radix" as explained in the next section.
+<br>&nbsp;
+<table border="">
+<tbody><tr>
+<td width="148"><b>BASE NAME</b></td>
+
+<td width="148"><b>BASE</b></td>
+
+<td width="148"><b>Symbol.</b></td>
+</tr>
+
+<tr>
+<td width="148">Binary</td>
+
+<td width="148">2</td>
+
+<td width="148">^b&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">Octal</td>
+
+<td width="148">8</td>
+
+<td width="148">^o&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">Decimal</td>
+
+<td width="148">10</td>
+
+<td width="148">^d (default)&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">Hexadecimal</td>
+
+<td width="148">16</td>
+
+<td width="148">^h&nbsp;</td>
+</tr>
+</tbody></table>
+
+<p>Examples:
+<br>&nbsp;
+<table>
+<tbody><tr>
+<td width="140">
+<ul><b>Specified in ABEL</b></ul>
+</td>
+
+<td width="140"><b>Decimal Value</b></td>
+</tr>
+
+<tr>
+<td width="140">
+<ul>35</ul>
+</td>
+
+<td width="140">
+<ul>35</ul>
+</td>
+</tr>
+
+<tr>
+<td width="140">
+<ul>^h35</ul>
+</td>
+
+<td width="140">
+<ul>53</ul>
+</td>
+</tr>
+
+<tr>
+<td width="140">
+<ul>^b101</ul>
+</td>
+
+<td width="140">
+<ul>5</ul>
+</td>
+</tr>
+</tbody></table>
+
+</p><h2>
+5.&nbsp;<a name="Directives"></a>Directives</h2>
+Directives allow advanced manipulation of the source file and processing,
+and can be placed anywhere needed in a file.
+<p><b>@ALTERNATE</b>
+<br><i>Syntax</i>
+<br>@alternate
+</p><p>@ALTERNATE enables an alternate set of operators. Using the <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Logical">alternate
+operator</a> set precludes use of the ABEL-HDL addition (+), multiplication
+(*) and division (/) operators because they represent the OR, AND and NOT
+logical operators in the alternate set. The standard operator still work
+when @ALTERNATE is in effect. The alternate operators remain in effect
+until the @STANDARD directive is used or the end of the module is reached.
+</p><p><b>@RADIX</b>
+<br><i>Syntax</i>
+<br>@radix <i>expr</i> ;
+<br><i>Expr:&nbsp;</i> A valid expression that produces the number 2, 8,
+10 or 16 to indicate a new default base number.
+</p><p>The @Radix directive changes the default base. The default is base 10
+(decimal). The newly-specified default base stays in effect until another
+@radix directive is issued or until the end of the module is reached. Note
+that when a new @radix is issued, the specification of the new base must
+be in the current base format
+</p><p>Example
+</p><blockquote>@radix 2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+“change default base to binary
+<br>…
+<br>@radix 1010;&nbsp;&nbsp;&nbsp;&nbsp; “change back from binary&nbsp;
+to decimal</blockquote>
+
+<p><br><b>@STANDARD</b>
+<br><i>Syntax</i>
+<br>@standard
+</p><p>The @standard option resets the operators to the ABEL-HDL standard.
+The alternate set is chosen with the @alternative directive.
+<br>&nbsp;
+<br>&nbsp;
+</p><h2>
+6.&nbsp;<a name="Sets"></a>Sets</h2>
+A set is a collection of signals or constants used to reference a group
+of signals by one name. A set is very handy to simplify logic expressions.
+Any operation that is applied to a set is applied to each element.
+<p>A set is a list of constants or signals separated by commas or the range
+operator (..) put between square brackets (required).
+</p><ul>Examples:</ul>
+
+<table>
+<tbody><tr>
+<td width="140">
+<ul><font face="Courier">[D0,D1,D2,D4,D5]</font></ul>
+</td>
+
+<td width="234"></td>
+</tr>
+
+<tr>
+<td width="140">
+<ul><font face="Courier">[D0..D6]</font></ul>
+</td>
+
+<td width="234">" incrementing range&nbsp;</td>
+</tr>
+
+<tr>
+<td width="140">
+<ul><font face="Courier">[b6..b0]</font></ul>
+</td>
+
+<td width="234">" decrementing range&nbsp;</td>
+</tr>
+
+<tr>
+<td width="140">
+<ul><font face="Courier">[D7..D15]</font></ul>
+</td>
+
+<td width="234"></td>
+</tr>
+
+<tr>
+<td width="140">
+<ul><font face="Courier">[b1,b2,a0..a3]</font></ul>
+</td>
+
+<td width="234">" range within a larger set</td>
+</tr>
+
+<tr>
+<td width="140">
+<ul><font face="Courier">[!S7..!S0]</font></ul>
+</td>
+
+<td width="234">"decrementing range of active -low signals</td>
+</tr>
+</tbody></table>
+
+<p>However, the following is not allowed: <tt>[D0, X];</tt>
+</p><ul>in which X is also a set <tt>X = [X3..X0]</tt>; Instead one can write:
+<p><tt>[D0, X3..X0]</tt>;</p></ul>
+
+<h3>
+a.&nbsp;<a name="Indexing"></a>Indexing or accessing a set</h3>
+Indexing allows you to access elements within a set. Use numerical values
+to indicate the set index. The number refers to the bit position in the
+set starting with 0 for the least significant bit of the set. Here are
+some examples.
+<ul><font face="Courier">D1 = [D15..D0]; "set declaration</font>
+<p><font face="Courier">X2 = [X3..X0]; "set declaration</font>
+</p><p><font face="Courier">X2 := D1[3..0]; "makes X2 equal to [D3, D2, D1,
+D0]</font>
+</p><p><font face="Courier">X2 := D1[7..4]; "makes X2 equal to [D7, D6, D5,
+D4]</font></p></ul>
+To access one element in the set, use the following syntax:
+<ul><font face="Courier">OUT = (X[2] == 1);</font></ul>
+Here a comparator operator (==) is used to convert the single-element (X[2])
+into a bit value equivalent to X2. The comparator (==) gives a"1" or "0"
+depending if the comparison is True or False. Notice the
+<i>difference
+between the assignment operator (=) and the equal operator (==)</i>. The
+assignment operator is used in equations rather than in expressions. Equations
+assign the value of an expression to the output signals.
+<h3>
+b.&nbsp;<a name="Set Operations"></a>Set operations</h3>
+Most of the operations can be applied to a set and are performed on each
+element of the set according to the rules of Boolean algebra. Operations
+are performed according to the <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#priority">operator's priority</a>;
+operators with the same priority are performed from left to right (unless
+one uses parentheses). Here are a couple of examples.
+<br>&nbsp;
+<br>&nbsp;
+<p>Example 1:
+</p><ul><font face="Courier">Signal = [D2,D1,D0]; "declaration of Signal set</font>
+<p><font face="Courier">Signal = [1,0,1] &amp; [0,1,1];" results in Signal
+being "equal to [0,0,1]</font></p></ul>
+Example 2:
+<ul><font face="Courier">[A,B] = C &amp; D;</font></ul>
+this is equivalent to two statements:
+<ul><font face="Courier">A = C &amp; D;</font>
+<p><font face="Courier">B = C &amp; D;</font></p></ul>
+Example 3:
+<ul><font face="Courier">[A1,B1] = [D1,D2] &amp; [C3,C2];</font>
+<p><font face="Courier">is equivalent to: [A1,B1] = [D1 &amp; C3, D2 &amp;
+C2];</font>
+</p><p><font face="Courier">thus A1 = D1 &amp; C3, and B1= D2 &amp; C2.</font></p></ul>
+Example 4:
+<ul><font face="Courier">X &amp; [A,B,C];</font></ul>
+which is equivalent to
+<ul>[X&amp;A, X&amp;B, X&amp;C];</ul>
+However consider the following expression
+<ul><font face="Courier">2 &amp; [A,B,C];</font></ul>
+now the number "2" is first converted into a binary representation and
+padded with zeros (0010) if necessary. Thus the above equation is equivalent
+to:
+<ul><font face="Courier">[0 &amp; A, 1 &amp; B, 0 &amp; C];</font></ul>
+Example 5:
+<ul><font face="Courier">A=[A2,A1,A0]; "set declaration</font>
+<p><font face="Courier">B=[B2,B1,B0]; "set declaration</font>
+</p><p><font face="Courier">A # B;</font> is equivalent to <font face="Courier">[A2
+# B2, A1 # B1, A0 # B0];</font>
+</p><p><font face="Courier">!A;</font> is equivalent to <font face="Courier">[!A2,!A1,!A0];</font></p></ul>
+Example 6:
+<ul><font face="Courier">[b3,b2,b1,b0] = 2;"is equivalent to b3=0,b2=0,b1=1,b0=0.</font></ul>
+The number "2" is converted into binary and padded with zeros (0010).
+<p>Example 7: Sets are also handy to specify logic equations. Suppose you
+need to specify the equation:
+</p><ul><font face="Courier">Chip_Sel = !A7 &amp; A6 &amp; A5;</font></ul>
+This can be done using sets. First define a constant Addr set.:
+<ul><font face="Courier">Addr = [A7,A6,A5];" declares a constant set Addr.</font></ul>
+One can then use the following equation to specify the address:
+<ul><font face="Courier">Chip_Sel = Addr == [0,1,1];</font></ul>
+which is equivalent to saying:
+<ul><font face="Courier">Chip_Sel = !A7 &amp; A6 &amp; A5;</font></ul>
+Indeed, if A7=0, A6=1 and A5=1, the expression Addr ==[0,1,1] is true (or
+1) and thus Chip_Sel will be true (or 1). Another way to write the same
+equation is:
+<ul><font face="Courier">Chip_Sel = Addr == 3; " decimal 3 is equal to
+011.</font></ul>
+The above expressions are very helpful when working with a large number
+of variables (ex. a 16 bit address).
+<p>Example 8:
+</p><p>For the same constants as in the example above, the expression,
+</p><ul><font face="Courier">3 &amp; Addr;</font></ul>
+which is equivalent to
+<ul><font face="Courier">[0,1,1] &amp; [A7,A6,A5]</font>
+<p><font face="Courier">[0 &amp; A7, 1 &amp; A6, 1 &amp; A5]</font>
+</p><p><font face="Courier">[0,A6,A5].</font></p></ul>
+However, the following statement is different:
+<ul><font face="Courier">3 &amp; (Addr == 1);</font></ul>
+which is equivalent to:
+<ul><font face="Courier">3 &amp; (!A7 &amp; !A6 &amp; A5).</font></ul>
+However, the relational operator (==) gives <u>only one bit</u>, so that
+the rest of the equation evaluates also to one bit, and the "3" is truncated
+to "1":. Thus the above equation is equal to:
+<ul><font face="Courier">1&amp; !A7 &amp; !A6 &amp; A5.</font></ul>
+
+<h2>
+7.&nbsp;<a name="Operators"></a>Operators</h2>
+There are four basic types of operators: logical, arithmetic, relational
+and assignment..
+<h3>
+a.&nbsp;<a name="Logical"></a>Logical Operators</h3>
+The table below gives the logical operators. They are performed bit by
+bit. With the <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Directives">@ALTERNATIVE directive</a>, one can
+use the alternative set of operators as indicated in the table.
+<br>&nbsp;
+<table border="">
+<tbody><tr>
+<td width="148"><b>Operator (default)</b></td>
+
+<td width="148"><b>Description&nbsp;</b></td>
+
+<td width="148"><b>Alternate operator</b></td>
+</tr>
+
+<tr>
+<td width="148">!</td>
+
+<td width="148">NOT (ones complement)</td>
+
+<td width="148">/</td>
+</tr>
+
+<tr>
+<td width="148">&amp;</td>
+
+<td width="148">AND</td>
+
+<td width="148">*&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">#</td>
+
+<td width="148">OR</td>
+
+<td width="148">+</td>
+</tr>
+
+<tr>
+<td width="148">$</td>
+
+<td width="148">XOR: exclusive or</td>
+
+<td width="148">:+:&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">!$</td>
+
+<td width="148">XNOR: exclusive nor</td>
+
+<td width="148">:*:</td>
+</tr>
+</tbody></table>
+
+<h3>
+b.&nbsp;<a name="Arithmetic"></a>Arithmetic operators</h3>
+The table below gives the arithmetic operators. Note that the last four
+operators are not allowed with sets. The minus sign can have different
+meanings: used between two operands it indicates subtraction (or adding
+the twos complement), while used with one operator it indicates the twos
+complement.
+<br>&nbsp;
+<table border="">
+<tbody><tr>
+<td width="118"><b>Operator</b></td>
+
+<td width="121"><b>Example</b></td>
+
+<td width="204"><b>Description</b></td>
+</tr>
+
+<tr>
+<td width="118">-</td>
+
+<td width="121">-D1</td>
+
+<td width="204">Twos complement (negation)&nbsp;</td>
+</tr>
+
+<tr>
+<td width="118">-</td>
+
+<td width="121">C1-C2</td>
+
+<td width="204">Subtraction&nbsp;</td>
+</tr>
+
+<tr>
+<td width="118">+</td>
+
+<td width="121">A+B</td>
+
+<td width="204">Addition&nbsp;</td>
+</tr>
+
+<tr>
+<td colspan="3" width="443">
+<center><b><i>The following operators are not used with sets:&nbsp;</i></b></center>
+</td>
+</tr>
+
+<tr>
+<td width="118">*</td>
+
+<td width="121">A*B</td>
+
+<td width="204">Multiplication&nbsp;</td>
+</tr>
+
+<tr>
+<td width="118">/</td>
+
+<td width="121">A/B</td>
+
+<td width="204">Unsigned integer division&nbsp;</td>
+</tr>
+
+<tr>
+<td width="118">%</td>
+
+<td width="121">A%B</td>
+
+<td width="204">Modulus: remainder of A/B&nbsp;</td>
+</tr>
+
+<tr>
+<td width="118">&lt;&lt;</td>
+
+<td width="121">A&lt;&lt;B</td>
+
+<td width="204">Shift A left by B bits&nbsp;</td>
+</tr>
+
+<tr>
+<td width="118">&gt;&gt;</td>
+
+<td width="121">A&gt;&gt;B</td>
+
+<td width="204">Shift B right by B bits&nbsp;</td>
+</tr>
+</tbody></table>
+
+<h3>
+c.&nbsp;<a name="Relational"></a>Relational operators</h3>
+These operators produce a Boolean value of <u>True (-1) or False (0).</u>
+The logical true value of -1 in twos complement is represented by all ones
+(i.e.<i>all bits will be ones</i>: ex. for a 16 bit word all bits are one:
+-1 is represented by 1111 1111 1111 1111).
+<br>&nbsp;
+<table border="">
+<tbody><tr>
+<td width="148"><b>Operator&nbsp;</b></td>
+
+<td width="148"><b>Example</b></td>
+
+<td width="148"><b>Description&nbsp;</b></td>
+</tr>
+
+<tr>
+<td width="148">==</td>
+
+<td width="148">A==B or 3==5 (false)</td>
+
+<td width="148">Equal</td>
+</tr>
+
+<tr>
+<td width="148">!=</td>
+
+<td width="148">A!=B or 3 != 5 (true)&nbsp;</td>
+
+<td width="148">Not equal</td>
+</tr>
+
+<tr>
+<td width="148">&lt;</td>
+
+<td width="148">A&lt;B or 3 &lt; 5 (true)&nbsp;</td>
+
+<td width="148">Less than</td>
+</tr>
+
+<tr>
+<td width="148">&lt;=</td>
+
+<td width="148">A&lt;=B or 3 &lt;= 5 (true)&nbsp;</td>
+
+<td width="148">Less than or equal</td>
+</tr>
+
+<tr>
+<td width="148">&gt;</td>
+
+<td width="148">A&gt;B or -1 &gt; 5 (true)&nbsp;</td>
+
+<td width="148">Greater than</td>
+</tr>
+
+<tr>
+<td width="148">&gt;=</td>
+
+<td width="148">A&gt;=B or !0 &gt;= 5 (true)&nbsp;</td>
+
+<td width="148">Greater than or equal</td>
+</tr>
+</tbody></table>
+
+<br>&nbsp;
+<p><i><font color="#914A19">Relational operators are unsigned</font></i>.
+Be careful: !0 is the one complement of 0 or 11111111 (8 bits data) which
+is 255 in unsigned binary. Thus !0 &gt; 9 is true. The expression -1&gt;5 is
+true for the same reason.
+</p><p>A relational expression can be used whenever a number can be used. The
+-1 or 0 will be substituted depending on the logical result. As an example
+:
+</p><ul>A = B !$ (C == D);</ul>
+A will be equal to B if C is equal to D (true or 11111...; B XNOR 1 equals
+B), otherwise, A will be equal to the complement of B (if C is not equal
+to B (false or 0)).
+<h3>
+d.&nbsp;<a name="Assignment"></a>Assignment operators</h3>
+These operators are used in equations to assign the value of an expression
+to output signals. There are two types of assignment operators: combinational
+and registered. In a combinational operator the assignment occurs immediately
+without any delay. The registered assignment occurs at the next clock pulse
+associated with the output. As an example, one can define a flip-flop with
+the following statements:
+<ul><font face="Courier">Q1 pin istype 'reg';</font>
+<p><font face="Courier">Q1 := D;</font></p></ul>
+The first statement defines the Q1 flip-flop by using the 'reg' as istype
+(registered output). The second statement tells that the output of the
+flip-flop will take the value of the D input at the next clock transition.
+<br>&nbsp;
+<table border="">
+<tbody><tr>
+<td width="221"><b>Operator</b></td>
+
+<td width="221"><b>Description</b></td>
+</tr>
+
+<tr>
+<td width="221">=</td>
+
+<td width="221">Combinational assignment&nbsp;</td>
+</tr>
+
+<tr>
+<td width="221">:=</td>
+
+<td width="221">Registered assignment</td>
+</tr>
+</tbody></table>
+
+<h3>
+e. Operator&nbsp;<a name="priority"></a>priority</h3>
+The priority of each operator is given in the following table, with priority
+1 the highest and 4 the lowest. Operators with the same priority are performed
+from left to right.
+<br>&nbsp;
+<table border="">
+<tbody><tr>
+<td width="148"><b>Priority</b></td>
+
+<td width="148"><b>Operator</b></td>
+
+<td width="148"><b>Description&nbsp;</b></td>
+</tr>
+
+<tr>
+<td width="148">1</td>
+
+<td width="148">-</td>
+
+<td width="148">Negation (twos complement)&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">1</td>
+
+<td width="148">!</td>
+
+<td width="148">NOT&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">2</td>
+
+<td width="148">&amp;</td>
+
+<td width="148">AND&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">2</td>
+
+<td width="148">&lt;&lt;</td>
+
+<td width="148">shift left&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">2</td>
+
+<td width="148">&gt;&gt;</td>
+
+<td width="148">shift right&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">2</td>
+
+<td width="148">*</td>
+
+<td width="148">multiply&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">2</td>
+
+<td width="148">/</td>
+
+<td width="148">unsigned division&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">2</td>
+
+<td width="148">%</td>
+
+<td width="148">modulus&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">3</td>
+
+<td width="148">+</td>
+
+<td width="148">add&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">3</td>
+
+<td width="148">-</td>
+
+<td width="148">subtract&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">3</td>
+
+<td width="148">#</td>
+
+<td width="148">OR</td>
+</tr>
+
+<tr>
+<td width="148">3</td>
+
+<td width="148">$</td>
+
+<td width="148">XOR&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">3</td>
+
+<td width="148">!$</td>
+
+<td width="148">XNOR&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">4</td>
+
+<td width="148">==</td>
+
+<td width="148">equal&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">4</td>
+
+<td width="148">!=</td>
+
+<td width="148">not equal&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">4</td>
+
+<td width="148">&lt;</td>
+
+<td width="148">less then&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">4</td>
+
+<td width="148">&lt;=</td>
+
+<td width="148">less then or equal&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">4</td>
+
+<td width="148">&gt;</td>
+
+<td width="148">greater than&nbsp;</td>
+</tr>
+
+<tr>
+<td width="148">4</td>
+
+<td width="148">&gt;=</td>
+
+<td width="148">greater than or equal&nbsp;</td>
+</tr>
+</tbody></table>
+
+<h2>
+8.&nbsp;<a name="Logic"></a>Logic description</h2>
+A logic design can be described in the following way.
+<ul>
+<li>
+Equations</li>
+
+<li>
+Truth Table</li>
+
+<li>
+State Description</li>
+</ul>
+
+<h3>
+a.&nbsp;<a name="Equations"></a>Equations</h3>
+Use the keyword <b><font face="Courier">equations</font></b> to begin the
+logic descriptions. Equations specify logic expressions using the <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Operators">operators</a>
+described above, or "When-Then-Else" statement.
+<p>The&nbsp;<a name="&quot;When-Then-Else&quot;"></a>"When-Then-Else" statement
+is used in equations to describe a logic function. (Note: "<a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#If-Else-Then">If
+-Then-Else</a>" is used in the State-diagram section to describe state
+progression).
+</p><p>The format of the "When-Then-Else" statement is as follows:
+</p><ul><font face="Courier">WHEN condition THEN element=expression;</font>
+<p><font face="Courier">ELSE equation;</font>
+</p><p><font face="Courier">or</font>
+</p><p><font face="Courier">WHEN condition THEN equation;</font></p></ul>
+Examples of equations:
+<ul><font face="Courier">SUM = (A &amp; !B) # (!A &amp; B) ;</font>
+<br><font face="Courier">A0 := EN &amp; !D1 &amp; D3 &amp; !D7;</font>
+<p><font face="Courier">WHEN (A == B) THEN D1_out = A1;</font>
+</p><ul>&nbsp;
+<br><font face="Courier">ELSE WHEN (A == C) THEN D1_out = A0;</font></ul>
+<font face="Courier">WHEN (A&gt;B) THEN { X1 :=D1; X2 :=D2; }</font></ul>
+One can use the braces { } to group sections together in blocks. The text
+in a block can be on one line or span many lines. Blocks are used in equations,
+state diagrams and directives.
+<h3>
+b.&nbsp;<a name="Truth"></a>Truth Tables</h3>
+The keyword <b>is <font face="Courier">truth-table </font></b>and the syntax
+is
+<ul><font face="Courier">TRUTH_TABLE ( in_ids -&gt; out_ids )</font>
+<p><font face="Courier">inputs -&gt; outputs ;</font></p></ul>
+or
+<ul><font face="Courier">TRUTH_TABLE ( in_ids :&gt; reg_ids )</font>
+<p><font face="Courier">inputs :&gt; reg_outs ;</font></p></ul>
+or
+<ul><font face="Courier">TRUTH_TABLE</font>
+<p><font face="Courier">( in_ids :&gt; reg_ids -&gt; out_ids )</font>
+</p><p><font face="Courier">inputs :&gt; reg_outs -&gt; outputs ;</font>
+<br>&nbsp;</p></ul>
+in which "-&gt;" is for combinational output and ":&gt;" for registered output.
+The first line of a truth table (between parentheses) defines the inputs
+and the output signals. The following lines gives the values of the inputs
+and outputs. Each line must end with a semicolon. The inputs and outputs
+can be single signals or sets. When sets are used as inputs or outputs,
+use the normal set notation, i.e. signals surrounded by square brackets
+and separated by commans. A don't care is represented by a ".X.".
+<p>Example 1: half adder
+</p><ul><tt><font face="Courier">TRUTH_TABLE ( [ A, B] -&gt; [Sum, Carry_out]
+)</font></tt>
+<ul>
+<ul><tt><font face="Courier">[ 0, 0 ] -&gt; [0, 0 ] ;</font></tt>
+<br><tt><font face="Courier">[ 0, 1 ] -&gt; [1, 0 ] ;</font></tt>
+<br><tt><font face="Courier">[ 1, 0 ] -&gt; [1, 0 ] ;</font></tt>
+<br><tt><font face="Courier">[ 1, 1 ] -&gt; [1, 1 ] ;</font></tt></ul>
+</ul>
+</ul>
+However, if one defines a set IN = [A,B]; and OUT = [Sum, Carry_out]; the
+truth table becomes simpler:
+<ul><tt><font face="Courier">TRUTH_TABLE (IN -&gt; OUT )</font></tt>
+<ul>
+<ul><tt><font face="Courier">0 -&gt; 0;</font></tt>
+<br><tt><font face="Courier">1 -&gt; 2;</font></tt>
+<br><tt><font face="Courier">2 -&gt; 2;</font></tt>
+<br><tt><font face="Courier">3 -&gt; 3;</font></tt></ul>
+</ul>
+</ul>
+Example 2: An excluse OR with two intputs and one enable (EN). This example
+illustrates the use of don't cares (.X.)
+<ul><tt><font face="Courier">TRUTH_TABLE ([EN, A, B] -&gt; OUT )</font></tt>
+<ul>
+<ul><tt><font face="Courier">[ 0, .X.,.X.] -&gt; .X. ;</font></tt>
+<br><tt><font face="Courier">[ 1, 0 , 0 ] -&gt; 0 ;</font></tt>
+<br><tt><font face="Courier">[ 1, 0 , 1 ] -&gt; 1 ;</font></tt>
+<br><tt><font face="Courier">[ 1, 1 , 0 ] -&gt; 1 ;</font></tt>
+<br><tt><font face="Courier">[ 1, 1 , 1 ] -&gt; 0 ;</font></tt></ul>
+</ul>
+</ul>
+Example 3: (see Example in R. Katz, section 7.2.1 and table 7.14)
+<p>Truth tables can also be used to define sequential machines. Lets implement
+a three-bit up counter which counts from 000, 001, to 111 and back to 000.
+Lets call QA, QB and QC the outputs of the flip-flops. In addition, we
+will generate an output OUT whenever the counter reaches the state 111.
+We will also reset the counter to the state 000 when the reset signal is
+high.
+</p><ul><tt><font face="Courier">MODULE CNT3;</font></tt>
+<p><tt><font face="Courier">CLOCK pin;</font> <font face="Courier">" input
+signal</font></tt>
+<br><tt><font face="Courier">RESET . pin;</font> <font face="Courier">"
+input signal</font></tt>
+<br><tt><font face="Courier">OUT pin istype 'com';</font> <font face="Courier">"
+output signal (combinational)</font></tt>
+<br><tt><font face="Courier">QC,QB,QA pin istype 'reg'; " output signal
+(registered)</font></tt>
+</p><p><tt><font face="Courier">[QC,QB,QA].CLK = CLOCK; "FF clocked on the
+CLOCK input</font></tt>
+<br><tt><font face="Courier">[QC,QB,QA].AR = RESET; "asynchronous reset
+by RESET</font></tt>
+</p><p><tt><font face="Courier">TRUTH_TABLE ) [QC, QB, QA] :&gt; [QC,QB,QA] -&gt;
+OUT)</font></tt>
+</p><ul>
+<ul>
+<ul><tt><font face="Courier">[ 0 0 0 ] :&gt; [ 0 0 1 ] -&gt; 0;</font></tt>
+<br><tt><font face="Courier">[ 0 0 1 ] :&gt; [ 0 1 0 ] -&gt; 0;</font></tt>
+<br><tt><font face="Courier">[ 0 1 0 ] :&gt; [ 0 1 1 ] -&gt; 0;</font></tt>
+<br><tt><font face="Courier">[ 0 1 1 ] :&gt; [ 1 0 0 ] -&gt; 0;</font></tt>
+<br><tt><font face="Courier">[ 1 0 0 ] :&gt; [ 1 0 1 ] -&gt; 0;</font></tt>
+<br><tt><font face="Courier">[ 1 0 1 ] :&gt; [ 1 1 0 ] -&gt; 0;</font></tt>
+<br><tt><font face="Courier">[ 1 1 0 ] :&gt; [ 1 1 1 ] -&gt; 0;</font></tt>
+<br><tt><font face="Courier">[ 1 1 1 ] :&gt; [ 0 0 0 ] -&gt; 1;</font></tt></ul>
+</ul>
+</ul>
+<tt><font face="Courier">END CNT3;</font></tt></ul>
+For the use of .DOT extensions (.CLK and .AR) see section 7d.
+<h3>
+c.&nbsp;<a name="State"></a>State Description</h3>
+The State_diagram section contains the state description for the logic
+design. This section uses the State_diagram syntax and the "If-Then-Else",
+"Goto", "Case" and "With" statements. Usually one declares symbolic state
+names in the Declaration section, which makes reading the program often
+easier.
+<p><i>State declaration</i> (in the declaration section) syntax:
+</p><ul><font face="Courier">state_id [, state_id ...] STATE ;</font></ul>
+As an example: <tt><font size="+1">SREG = [Q1, Q2];</font></tt> associates
+the state name SREG with the state defined by Q1 and Q2.
+<p><u>The <b>syntax </b>for <i>State_diagram</i> is as follows:</u>
+</p><ul><font face="Courier">State_diagram <i>state_reg</i></font>
+<p><font face="Courier">STATE <i>state_value</i> : [equation;]</font>
+</p><p><font face="Courier">[equation;]</font>
+</p><p><font face="Courier">:</font>
+</p><p><font face="Courier">:</font>
+</p><p><font face="Courier">trans_stmt ; ...</font></p></ul>
+The keyword <b><font face="Courier">state_diagram </font></b>indicates
+the beginning of a state machine description.
+<p>The STATE keyword and following statements describe one state of the
+state diagram and includes a state value or symbolic state name, state
+transition statement and an optional output equation. In the above syntax,
+</p><ul>
+<li>
+<font face="Courier">state_reg</font>: is an identifier that defines the
+signals that determine the state of the machine. This can be a symbolic
+state register that has been declared earlier in the declaration section.</li>
+
+<li>
+<font face="Courier">state_value</font>: can be an expression, a value
+or a symbolic state name of the current state;</li>
+
+<li>
+<font face="Courier">equation</font> : an equation that defines the state
+machine outputs</li>
+
+<li>
+<font face="Courier">trans_stmt</font>: the "If-Then-Else", CASE or GOTO
+statements to defines the next state, followed with optional WITH transition
+equations.</li>
+</ul>
+<a name="If-Else-Then"></a><u><b><font face="Courier">If-Then-Else</font></b>
+statement:</u>
+<p>This statement is used in the state_diagram section to describe the
+next state and to specify mutually exclusive transition conditions.
+</p><p>Syntax<font face="Courier">:</font>
+</p><ul><font face="Courier">IF expression THEN state_exp</font>
+<p><font face="Courier">[ELSE state_exp] ;</font></p></ul>
+In which state-exp can be a logic expression or a symbolic state name.
+Note that the "IF-Then-Else" statement can only be used in the state_diagram
+section (use the <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#%22When-Then-Else%22">"When-If-Then"</a>
+to describe logic functions". The ELSE clause is optional. The IF-Then-Else
+statements can be nexted with <tt><font size="+1">Goto, Case</font></tt>
+and <tt><font size="+1">With</font></tt> statements.
+<p>Example (after R. Katz):
+</p><p>in the declaration section we define first the state registers:
+</p><ul><font face="Courier">SREG = [Q1, Q0];</font> "definition of state registers
+<br><font face="Courier">S0 = [0, 0];</font>
+<br><font face="Courier">S1 = [1, 1];</font>
+<p><font face="Courier">state_diagram SREG</font>
+<br><font face="Courier">state S0:</font> OUT1 = 1;
+</p><ul>&nbsp;
+<br><font face="Courier">if A then S1</font>
+<br><font face="Courier">else S0;</font></ul>
+<font face="Courier">state S1: OUT2 =1;</font>
+<ul>&nbsp;
+<br><font face="Courier">if A then S0</font>
+<br><font face="Courier">else S1;</font></ul>
+</ul>
+"If-Then-Else" statements can be nested as in the following example (after
+Wakerly). We assume that one has defined the registers and states in the
+declaration section.
+<ul><font face="Courier">state_diagram MAK</font>
+<p><font face="Courier">state INIT: if RESET then INIT else LOOK;</font>
+</p><p><font face="Courier">state LOOK: if REST than INIT</font>
+</p><ul><font face="Courier">else if (X == LASTX) then OK</font>
+<br><font face="Courier">else LOOK;</font></ul>
+<font face="Courier">state OK: if RESET than INIT</font>
+<ul><font face="Courier">else if Y then OK</font>
+<br><font face="Courier">else if (X == LASTX) then OK</font>
+<br><font face="Courier">else LOOK;</font></ul>
+<font face="Courier">state OK: goto INIT;</font></ul>
+<u>"<a name="with"></a><b><font face="Courier">with</font></b>" statement:</u>
+<p>Syntax:
+</p><ul><font face="Courier">trans_stmt state_exp WITH equation</font>
+<br><font face="Courier">[equation ] ... ;</font></ul>
+in which trans_stmt can be "If-then-else", 'Goto" or a "Case" statement.
+<br><tt>state_exp</tt>: is the next state, and <tt>equation</tt> is an
+equation for the machine outputs.
+<p>This statement can be used with the "If-Then-Else", "Goto" or "Case"
+statements in place of a simple state expression. The "With" statement
+allows the output equations to be written in terms of transitions.
+</p><p>Example 1:
+</p><ul><tt><font size="+1">if X#Y==1 then S1 with Z=1 else S2;</font></tt></ul>
+In the above example, the output Z will be asserted as soon as the expression
+after the if statement evaluates to a logic 1 (or TRUE). The expression
+after the "With" keyword can be an equation that will be evaluated as soon
+as the if condition is true as in example 2:
+<p>Example 2:
+</p><ul><tt><font size="+1">if X&amp;!Y then S3 with Z=X#Y else S2 with Z=Y;</font></tt></ul>
+The "With" statement is also useful to describe output behavior of registered
+outputs, since registered outputs would lag by one clock cycle. It allows
+one also for instance to specify that a registered output should have a
+specific value after a particular transition. As an example [1],
+<p>Example 3[1]:
+</p><p><font face="Courier">state S1:</font>
+</p><ul><font face="Courier">if RST then S2 with { OUT1 := 1;</font>
+<ul><font face="Courier">Error-Adrs := ADDRESS; }</font></ul>
+<font face="Courier">else if (ADDRESS &lt;= ^hC101)</font>
+<ul><font face="Courier">then S4</font>
+<br><font face="Courier">else S1;</font></ul>
+</ul>
+Notice that one can use curly braces to control a group of outputs and
+equations after the With keyword as in the example above.
+<p>Example 3:
+</p><ul><font face="Courier">state S1: if (A &amp; B) then S2 with TK = 1</font>
+<ul><font face="Courier">else S0 with TK = 0 ;</font></ul>
+</ul>
+You have to be aware of the timing when using the "With " statement with
+combinational or asynchronous outputs (as in a Mealy machine). A Mealy
+machine
+changes its outputs as soon as the input changes. This may cause the output
+to change too quickly resulting in glitches. The outputs of a Mealy machine
+will be valid at the end of a state time (i.e. just before the clock transition).
+In this respect a Moore output (with synhronous outputs) is less prone
+to timing errors. An example of a <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abelMealy.html">Mealy machine</a>
+and a <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abelMoore.html">Moore machine</a> is available.
+<p><a name="Case"></a><b><u><font face="Courier">Case</font> </u></b><u>statement</u>
+</p><p>Syntax:
+</p><ul><font face="Courier">CASE expression : state_exp;</font>
+<p><font face="Courier">[ expression : state_exp; ]</font>
+<br><font face="Courier">:</font>
+</p><p><font face="Courier">ENDCASE ;</font></p></ul>
+expression is any valid ABEL expression and state_exp is an expression
+that indicates the next state (optionally followed by WITH statement).
+<p>Example:
+</p><ul><font face="Courier">State S0:</font>
+<ul><font face="Courier">case ( A == 0) : S1;</font>
+<ul><font face="Courier">( A == 1) : S0;</font></ul>
+</ul>
+<font face="Courier">endcase;</font></ul>
+The case statement is used to list a sequence of mutually-exclusive transition
+conditions and corresponding next states. The CASE statement conditions
+must be mutually exclusive (no two transition conditions can be true at
+the same time) or the resulting next state is unpredictable.
+<h3>
+d. Dot&nbsp;<a name="extensions"></a>extensions</h3>
+One can use dot extensions to more precisely describe the behavior of the
+circuit. The signal extensions are very handy and provide a means to refer
+specifically to internal signals and nodes associated with a primary signal.
+<p>The syntax is
+</p><ul><font face="Courier">signal_name.ext</font></ul>
+Some of the dot extensions are given in the following table. Extensions
+are not case sensitive. Some dot extensions are general purpose (also called
+architecture independent or pin-to-pin) and can used with a variety of
+device architectures. Other dot extensions are used for specific classes
+of device architectures and are called architecture-dependent or detailed
+dot extensions. In general, you can use either dot extensions.
+<br>&nbsp;
+<center><table border="">
+<tbody><tr>
+<td width="109"><b>Dot extension</b></td>
+
+<td width="270"><b>Description</b></td>
+</tr>
+
+<tr>
+<td colspan="2" width="379"><b>Architecture independent or pin-to-pin extensions</b></td>
+</tr>
+
+<tr>
+<td width="109">.ACLR</td>
+
+<td width="270">Asynchronous register reset&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.ASET</td>
+
+<td width="270">Asynchronous register preset&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.CLK</td>
+
+<td width="270">Clock input to an edge-triggered flip-flop&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.CLR</td>
+
+<td width="270">Synchronous register reset&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.COM</td>
+
+<td width="270">Cominbational feedback from flip-flop data input&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.FG</td>
+
+<td width="270">Register feedback</td>
+</tr>
+
+<tr>
+<td width="109">.OE</td>
+
+<td width="270">Output enable</td>
+</tr>
+
+<tr>
+<td width="109">.PIN</td>
+
+<td width="270">Pin feedback</td>
+</tr>
+
+<tr>
+<td width="109">.SET</td>
+
+<td width="270">Synchronous register preset&nbsp;</td>
+</tr>
+
+<tr>
+<td colspan="2" width="379"><b>Device Specific extensions (architecture
+dependent)</b></td>
+</tr>
+
+<tr>
+<td width="109">.D</td>
+
+<td width="270">Data input to a D Flip flop&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.J</td>
+
+<td width="270">J input to a JK flip-flop&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.K</td>
+
+<td width="270">K input to a JK flip-flop&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.S</td>
+
+<td width="270">S input to a SR flip-flop&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.R</td>
+
+<td width="270">R input to a SR flip-flop&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.T</td>
+
+<td width="270">T input to a T flip-flop&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.Q</td>
+
+<td width="270">Register feedback</td>
+</tr>
+
+<tr>
+<td width="109">.PR</td>
+
+<td width="270">Register preset</td>
+</tr>
+
+<tr>
+<td width="109">.RE</td>
+
+<td width="270">Register reset</td>
+</tr>
+
+<tr>
+<td width="109">.AP</td>
+
+<td width="270">Asynchronous register preset&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.AR</td>
+
+<td width="270">Asynchronous register reset&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.SP</td>
+
+<td width="270">Synchronous register preset&nbsp;</td>
+</tr>
+
+<tr>
+<td width="109">.SR</td>
+
+<td width="270">Synchronous register reset&nbsp;</td>
+</tr>
+</tbody></table></center>
+
+<p>The figure below illustrates some of the extensions.
+<br>&nbsp;
+<br>&nbsp;
+<br>
+<br>
+<br>
+</p><center>
+<p><img src="./HDL-ABEL Primer_files/abel.1.gif" height="226" width="621">
+</p><p>Figure 1: Illustration of DOT extensions for: (a) an architecture independent
+(pin-to-pin) and (b) arhitecture dependent D-type (or T-type) Flip Flop
+Architecture</p></center>
+
+<p>Example 1:
+</p><ul><font face="Courier">[S6..S0].OE = ACTIVE;</font></ul>
+which accesses the tri state control signal of the output buffers of the
+signals S6..S0. When ACTIVE is high, the signals will be enabled, otherwise
+a high Z output is generated.
+<p>Example 2:
+</p><ul><font face="Courier">Q.AR = reset;</font>
+<p><font face="Courier">[Z.ar, Q.ar] = reset;</font></p></ul>
+which resets to output of the registers (flip flops) to zero when reset
+is high.
+<h2>
+9. Test&nbsp;<a name="vectors"></a>vectors</h2>
+Test vectors are optional and provide a means to verify the correct operation
+of a state machine. The vectors specify the expected logical operation
+of a logic device by explicitly giving the outputs as a function of the
+inputs.
+<p>Syntax:
+</p><ul>&nbsp;
+<br><font face="Courier">Test_vectors [note]</font>
+<p><font face="Courier">(input [, input ].. -&gt; output [, output ] .. )</font>
+</p><p><font face="Courier">[invalues -&gt; outvalues ; ]</font>
+<br><font face="Courier">:</font>
+<br><font face="Courier">:</font></p></ul>
+Example:
+<ul><font face="Courier">Test_vectors</font>
+<p><font face="Courier">( [A, B] -&gt; [Sum, Carry] )</font>
+</p><p><font face="Courier">[ 0, 0 ] -&gt; [0, 0];</font>
+<br><font face="Courier">[ 0, 1 ] -&gt; [1, 0];</font>
+<br><font face="Courier">[ 1, 0 ] -&gt; [1, 0];</font>
+<br><font face="Courier">[ 1, 1 ] -&gt; [1, 1];</font></p></ul>
+One can also specify the values for the set with numeric constants as shown
+below.
+<ul><font face="Courier">Test_vectors</font>
+<p><font face="Courier">( [A, B] -&gt; [Sum, Carry] )</font>
+</p><ul><font face="Courier">0 -&gt; 0;</font>
+<br><font face="Courier">1 -&gt; 2;</font>
+<br><font face="Courier">2 -&gt; 2;</font>
+<br><font face="Courier">3 -&gt; 3;</font></ul>
+</ul>
+Don't cares (.X.), clock inputs (.C.) as well as symbolic constants are
+allowed, as shown in the following example.
+<br>&nbsp;
+<br>&nbsp;
+<ul><font face="Courier">test_vectors</font>
+<p><font face="Courier">( [CLK, RESET, A, B ] -&gt; [ Y0, Y1, Y3] )</font>
+</p><ul><font face="Courier">[.X., 1, .X.,.X.]-&gt;[ S0, 0, 0];</font>
+<br><font face="Courier">[.C., 0, 0, 1 ] -&gt; [ S0, 0, 0];</font>
+<br><font face="Courier">[.C., 1, 1, 0 ] -&gt; [ S0, 0, 1];</font></ul>
+</ul>
+
+<h2>
+10.&nbsp;<a name="Property"></a>Property Statements</h2>
+ABEL allows to give device specific statements using the property statement.
+This statement will be passed to the "Fitter" program during compilation.
+For the CPLD devices these properties include
+<ul>
+<li>
+Slew rates</li>
+
+<li>
+Logic optimizations</li>
+
+<li>
+Logic placement</li>
+
+<li>
+Power settings</li>
+
+<li>
+Preload values</li>
+</ul>
+
+<h2>
+11.&nbsp;<a name="Miscellaneous"></a>Miscellaneous</h2>
+
+<h3>
+a.&nbsp;<a name="Active-low"></a>Active-low declarations</h3>
+Active low signals are defined with a "!" operator, as shown below,
+<ul><font face="Courier">!OUT pin istype 'com' ;</font></ul>
+When this signal is used in a subsequent design description, it will be
+automatically complemented. As an example consider the following description,
+<ul><font face="Courier">module EXAMPLE</font>
+<p><font face="Courier">A, B pin ;</font>
+</p><p><font face="Courier">!OUT pin istype 'com';</font>
+</p><p><font face="Courier">equations</font>
+</p><p><font face="Courier">OUT = A &amp; !B # !A &amp; B ;</font>
+</p><p><font face="Courier">end</font></p></ul>
+In this example, the signal OUT is an XOR of A and B, i.e. OUT will be
+"1" (High, or ON) when only one of the inputs is "1", otherwise OUT is
+"0". However, the output pin is defined as !OUT , i.e. as an active-low
+signal, which means that the pin will go low "0" (Active-low or ON) when
+only one of the two inputs are "1". One could have obtained the same result
+by inverting the signal in the equations and declaring the pin to be OUT,
+as is shown in the following example. This is called <i>explicit pin-to-pin
+active-low</i> (because one uses active-low signals in the equations).
+<ul><font face="Courier">module EXAMPLE</font>
+<p><font face="Courier">A, B pin ;</font>
+</p><p><font face="Courier">OUT pin istype 'com';</font>
+</p><p><font face="Courier">equations</font>
+</p><p><font face="Courier">!OUT = A &amp; !B # !A &amp; B ;</font>
+</p><p><font face="Courier">end</font></p></ul>
+Active low can be specified for a set as well. As an example lets define
+the sets A,B and C.
+<ul><font face="Courier">A = [A2,A1,A0]; "set declaration</font>
+<br><font face="Courier">B = [B2,B1.B0]; "set declaration</font>
+<br><font face="Courier">X = [X2,X1.X0]; "set declaration</font>
+<p><font face="Courier">!X = A &amp; !B # !A &amp; B;</font></p></ul>
+The last equation is equivalent to writing
+<ul>!X0 = <font face="Courier">A0 &amp; !B0 # !A0 &amp; B0;</font>
+<br>!X1 = <font face="Courier">A1 &amp; !B1 # !A1 &amp; B1;</font>
+<br>!X2 = <font face="Courier">A2 &amp; !B2 # !A2 &amp; B2;</font></ul>
+
+<h2>
+<a name="References"></a>References</h2>
+
+<ul>
+<li>
+1. Xilinx-ABEL Design Software Reference Manual, Data I/O Corp., 1993.</li>
+
+<li>
+2. The ISP Application Guide and CPLD Data Book, Application Note XAPP075,
+1997, Xilinx, San Jose, CA, 1997.</li>
+
+<li>
+3. D. Van den Bout, "Xilinx FPGA Student Manual", Prentice Hall, Englewoods
+Cliff, NJ, 1997.</li>
+
+<li>
+4. R. Katz, "Contemporary Logic Design," Benjamin/Cummings Publ. Comp.,
+Redwood City, CA, 1995.</li>
+
+<li>
+5. J. Wakerly, "Digital Design," 3rd Edition, Prentice Hall, Englewoods
+Cliff, NJ, 2000.</li>
+
+<li>
+6. Xilinx Foundation Series, On-line documentation, Xilinx, San Jose, CA.</li>
+</ul>
+
+<h2>
+<a name="Acknowledgement"></a>Acknowledgement</h2>
+The support of Mr. Jason Feinsmith and the <b><i><font size="+1"><a href="https://web.archive.org/web/20071012234417/http://www.xilinx.com/">Xilinx</a></font></i></b>Corporation
+is acknowledged for providing the XILINX Foundation M1(TM) Software and
+FPGA Demoboards for educational purposes.
+<h2>
+
+<hr size="4" width="100%"></h2>
+Back to ABEL Primer <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Contents">Contents</a>
+<br><font size="-1">Back to the Foundation Tutorial <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/abel_primer.html#Contents">table
+of Contents</a></font>
+<br><font size="-1">Go to <b>tutorial</b>:</font> <font size="-1"><a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/foundation_sch1.html">Entering
+a Schematic</a> | <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/foundation_abel3.html">Entering a design with
+ABEL</a>&nbsp; | <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/foundation_vhdl.html">Entering a design with
+VHDL</a>| <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/foundation_sim2.html">Simulation</a> | <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/foundation_macros6.html">Macros
+and Hierarchical</a> design | <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/foundation_StateEditor.html">State
+Editor</a>&nbsp; |&nbsp; <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/foundation_impl4.html">Design Implementation</a>
+| <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/foundation_config5.html">Configuring a device</a>&nbsp; | <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/abel/commistakes.html">Common
+Mistakes</a> |</font>
+<br><font size="-1"><b>Board description</b>: <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/boards/demoboard.html">FPGA
+Demoboard</a> | <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/boards/XS40Board.html">XS40</a> | <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/boards/XS95Board.html">XS95</a>
+|</font>
+<br><font size="-1"><b>Pinouts</b>: <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/boards/xc4000pins.html">XC4000</a>
+| <a href="https://web.archive.org/web/20071012234417/http://www.seas.upenn.edu/~ese201/boards/xc9500pins.html">XC9500</a>.</font>
+<br>
+<hr width="100%">
+<br>Copyright, 2000,&nbsp; <a href="https://web.archive.org/web/20071012234417/http://www.ee.upenn.edu/~jan">J. Van
+der Spiegel</a>, &lt;jan@ee.upenn.edu&gt; Sept. 26, 1997; Updated May 14,
+2000
+<br>&nbsp;
+
+
+
+</body></html>
